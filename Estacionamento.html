@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tarifa de Estacionamento</title>
+    <link rel="stylesheet" href="Estacionamento.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Estacionamento</h1>
+            <p>Sistema de cálculo de tarifas com precisão</p>
+        </header>
+
+        <main>
+            <form id="parking-form">
+                <!-- Campo para entrada de horas -->
+                <div class="form-group">
+                    <label for="hours">Quantas horas estacionou?</label>
+                    <input 
+                        type="number" 
+                        id="hours" 
+                        name="hours" 
+                        min="0" 
+                        step="0.5" 
+                        placeholder="Digite o número de horas"
+                        required
+                    >
+                </div>
+
+                <!-- Checkbox para carro grande -->
+                <div class="form-group">
+                    <label for="large-car">
+                        <input 
+                            type="checkbox" 
+                            id="large-car" 
+                            name="large-car"
+                        >
+                        Carro grande? (+25% na tarifa)
+                    </label>
+                </div>
+
+                <!-- Checkbox para cliente frequente -->
+                <div class="form-group">
+                    <label for="frequent-client">
+                        <input 
+                            type="checkbox" 
+                            id="frequent-client" 
+                            name="frequent-client"
+                        >
+                        Cliente frequente? (-5% na tarifa)
+                    </label>
+                </div>
+
+                <!-- Botão para calcular -->
+                <button type="button" id="calculate-btn" class="btn-calculate">
+                    Calcular Tarifa
+                </button>
+            </form>
+
+            <!-- Área de resultado -->
+            <div id="result-area" class="result-hidden">
+                <div class="result-box">
+                    <h2>Valor Total</h2>
+                    <p id="result-text" class="result-value">R$ 0,00</p>
+                    <div id="result-details" class="result-details"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="Estacionamento.js"></script>
+</body>
+</html>
